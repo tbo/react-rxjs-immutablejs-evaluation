@@ -1,0 +1,44 @@
+{
+  "name": "my-react-boilerplate",
+  "version": "0.0.1",
+  "description": "My personal react boilerplate",
+  "scripts": {
+    "start": "node server.js",
+    "lint": "eslint src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tbo/my-react-boilerplate"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "boilerplate",
+    "hot",
+    "reload",
+    "reactive",
+    "rxjs"
+  ],
+  "author": "Thomas Bonk <tbo@cybo.biz> (http://github.com/tbo)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tbo/my-react-boilerplate/issues"
+  },
+  "homepage": "https://github.com/tbo/my-react-boilerplate",
+  "devDependencies": {
+    "babel-core": "5.8.21",
+    "babel-eslint": "4.0.5",
+    "babel-loader": "5.3.2",
+    "eslint-plugin-react": "3.2.1",
+    "react-hot-loader": "1.2.8",
+    "webpack": "1.11.0",
+    "webpack-dev-server": "1.10.1"
+  },
+  "dependencies": {
+    "axios": "0.5.4",
+    "react-router": "1.0.0-beta3",
+    "react": "0.13.3",
+    "rx-lite": "3.0.0",
+    "seamless-immutable": "^3.0.0"
+  }
+}
