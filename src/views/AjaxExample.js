@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Actions from './Actions';
+import Actions from '../Actions';
 
 export default class App extends Component {
     render() {

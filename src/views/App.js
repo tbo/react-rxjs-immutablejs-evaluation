@@ -4,8 +4,8 @@ import {history} from 'react-router/lib/BrowserHistory';
 import CounterExample from './CounterExample';
 import AjaxExample from './AjaxExample';
 import Main from './Main';
-import {appState} from './flux';
-import {incrementCounter} from './Actions';
+import {appState} from '../flux';
+import {incrementCounter} from '../Actions';
 
 export default class App extends Component {
     render() {
