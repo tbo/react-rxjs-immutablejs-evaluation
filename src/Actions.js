@@ -1,20 +1,20 @@
-import {action} from './flux'
-import request from 'axios'
+import {action} from './flux';
+import request from 'axios';
 
 function updateCounter(value, state) {
-    state.counter += value
-    return state
+    state.counter += value;
+    return state;
 }
 
 export default {
     @action
     incrementCounter(observable) {
-        return observable.map(x => 1).setStore(updateCounter)
+        return observable.map(x => 1).setStore(updateCounter);
     },
 
     @action
     decrementCounter(observable) {
-        return observable.map(x => -1).setStore(updateCounter)
+        return observable.map(x => -1).setStore(updateCounter);
     },
 
     @action
