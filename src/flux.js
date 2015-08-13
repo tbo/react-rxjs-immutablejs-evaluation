@@ -9,13 +9,6 @@ export class Store extends Rx.BehaviorSubject {
     onCompleted() {/* keep alive */}
 }
 
-export class Action extends Rx.Subject {
-    constructor(properties) {
-        super();
-        this.trigger = this.onNext.bind(this);
-    }
-}
-
 export const appState = new Store({counter: 0});
 
 Rx.Observable.prototype.asImmutable = function () {
@@ -37,3 +30,17 @@ Rx.Observable.prototype.setStore = function (reducer, store = appState) {
 }
 
 export {Rx};
+
+export function action(target, key, descriptor) {
+    let action = descriptor.value;
+    let inputStream = new Rx.Subject();
+    let outputStream = action.call(target, inputStream);
+    descriptor.value = function actionDecorator(arg) {
+        if (arg instanceof Rx.Observable) {
+            return action.call(target, arg);
+        }
+        inputStream.onNext(arg);
+        return outputStream;
+    };
+    return descriptor;
+}
