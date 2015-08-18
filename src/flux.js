@@ -9,7 +9,7 @@ export class Store extends Rx.BehaviorSubject {
     onCompleted() {/* keep alive */}
 }
 
-export const appState = new Store({counter: 0});
+export const appState = new Store({});
 
 Rx.Observable.prototype.asImmutable = function () {
     return this.map(value => Immutable(value));
