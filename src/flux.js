@@ -6,6 +6,10 @@ export class Store extends Rx.BehaviorSubject {
         super(Immutable(properties));
     }
 
+    set(properties) {
+        this.onNext(Immutable(properties));
+    }
+
     onCompleted() {/* keep alive */}
 }
 

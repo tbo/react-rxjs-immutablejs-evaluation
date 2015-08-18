@@ -8,11 +8,6 @@ function updateCounter(value, state) {
 
 export default {
     @action
-    initializeStore(observable) {
-        return observable.setStore(() => ({counter: 0}));
-    },
-
-    @action
     incrementCounter(observable) {
         return observable.map(x => 1).setStore(updateCounter);
     },
