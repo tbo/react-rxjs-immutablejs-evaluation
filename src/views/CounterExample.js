@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Actions from '../Actions';
-import {Rx} from '../flux';
 
 export default class App extends Component {
     render() {
