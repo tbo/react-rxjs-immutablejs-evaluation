@@ -1,13 +1,13 @@
 import Rx from 'rx-lite';
-import Immutable from 'seamless-immutable';
+import Immutable from 'immutable';
 
 export class Store extends Rx.BehaviorSubject {
     constructor(properties) {
-        super(Immutable(properties));
+        super(Immutable.fromJS(properties));
     }
 
     set(properties) {
-        this.onNext(Immutable(properties));
+        this.onNext(Immutable.fromJS(properties));
     }
 
     onCompleted() {/* keep alive */}
@@ -15,22 +15,12 @@ export class Store extends Rx.BehaviorSubject {
 
 export const appState = new Store({});
 
-Rx.Observable.prototype.asImmutable = function () {
-    return this.map(value => Immutable(value));
-}
-
-Rx.Observable.prototype.asMutable = function (deep = true) {
-    return this.map(value => value.asMutable({deep}));
-}
-
 Rx.Observable.prototype.log = function () {
-    this.subscribe(next => console.log('[Stream]', next));
-    return this;
+    return this.subscribe(next => console.log('[Stream]', next instanceof Immutable.Map ? next.toJS() : next));
 }
 
-Rx.Observable.prototype.setStore = function (reducer, store = appState) {
-    this.withLatestFrom(store.asMutable(), reducer).asImmutable().subscribe(store);
-    return this;
+Rx.Observable.prototype.setState = function setState(reducer, store = appState) {
+    return this.withLatestFrom(store, reducer).subscribe(store);
 }
 
 export {Rx};

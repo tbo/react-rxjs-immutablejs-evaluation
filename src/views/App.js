@@ -10,8 +10,8 @@ export default class App extends Component {
         return (
             <Router history={history}>
                 <Route path="/" component={Main}>
-                    <Route path="counter" component={CounterExample} counter={this.props.appState.counter}/>
-                    <Route path="ajax" component={AjaxExample} ajaxMsg={this.props.appState.ajaxMsg}/>
+                    <Route path="counter" component={CounterExample} counter={this.props.appState.get('counter')}/>
+                    <Route path="ajax" component={AjaxExample} ajaxMsg={this.props.appState.get('ajaxMsg')}/>
                 </Route>
             </Router>
         )

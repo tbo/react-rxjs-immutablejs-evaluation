@@ -36,9 +36,9 @@
   },
   "dependencies": {
     "axios": "0.5.4",
-    "react-router": "1.0.0-beta3",
+    "immutable": "3.7.4",
     "react": "0.13.3",
-    "rx-lite": "3.0.1",
-    "seamless-immutable": "^3.0.0"
+    "react-router": "1.0.0-beta3",
+    "rx-lite": "3.1.0"
   }
 }

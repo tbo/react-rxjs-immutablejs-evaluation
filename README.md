@@ -28,3 +28,4 @@ npm run lint
 * [react-hot-loader](https://github.com/gaearon/react-hot-loader)
 * [react-router](https://github.com/rackt/react-router)
 * [RxJS](https://github.com/Reactive-Extensions/RxJS)
+* [immutable-js](https://github.com/facebook/immutable-js)
