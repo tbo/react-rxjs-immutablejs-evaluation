@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import Actions from '../Actions';
+import {onLoad} from '../flux';
 
-export default class App extends Component {
+@onLoad(Actions.incrementCounter)
+export default class CounterPage extends Component {
     render() {
         return (
             <div>

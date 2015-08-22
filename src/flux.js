@@ -20,10 +20,17 @@ Rx.Observable.prototype.log = function () {
 }
 
 Rx.Observable.prototype.setState = function setState(reducer, store = appState) {
-    return this.withLatestFrom(store, reducer).subscribe(store);
+    this.withLatestFrom(store, reducer).subscribe(store);
+    return this;
 }
 
 export {Rx};
+
+export function onLoad(loadAction) {
+    return function(target, key, descriptor)  {
+        target.onLoad = loadAction;
+    }
+}
 
 export function action(target, key, descriptor) {
     let action = descriptor.value;
