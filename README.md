@@ -1,7 +1,7 @@
-my-react-boilerplate
-=====================
+react-rxjs-immutablejs-evaluation
+=================================
 
-This is my personal react boilerplate.
+This boilerplate evaluates the usage of RxJS as the basis of an flux implementation.
 
 ### Usage
 
